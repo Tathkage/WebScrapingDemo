@@ -76,7 +76,11 @@ WSGI_APPLICATION = 'my_django_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'tathluach_web-scraping-demo',
+        'USER': 'tathluac_tathluach',
+        'PASSWORD': 'XDlUBFFI6bEIyXmCFhB2',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

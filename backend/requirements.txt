@@ -2,4 +2,3 @@ Django>=3.2,<4.0
 djangorestframework
 mysqlclient
 flake8
-// Any other dependencies you have

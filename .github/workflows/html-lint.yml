@@ -23,4 +23,4 @@ jobs:
         run: npm install
 
       - name: Lint HTML
-        run: npx htmlhint "path/to/your/html/files/**/*.html" --config .htmlhintrc
+        run: npx htmlhint "./frontend/my-angular-app/src/app/**/*.html" --config .htmlhintrc

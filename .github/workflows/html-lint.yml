@@ -17,10 +17,10 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 20.10.0
 
       - name: Install Dependencies
         run: npm install
 
       - name: Lint HTML
-        run: npx htmlhint "./frontend/my-angular-app/src/app/**/*.html" --config .htmlhintrc
+        run: npx htmlhint "**/*.html"

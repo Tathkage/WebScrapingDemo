@@ -1,0 +1,30 @@
+name: CSS Linter
+
+on:
+  push:
+    branches: [ main, test, dev ]
+  pull_request:
+    branches: [ main, test, dev ]
+
+jobs:
+  css-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.10.0
+          cache: 'npm'
+          cache-dependency-path: frontend/my-angular-app/package-lock.json
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ./frontend/my-angular-app
+
+      - name: Lint CSS
+        run: npx stylelint "**/*.css"
+        working-directory: ./frontend/my-angular-app

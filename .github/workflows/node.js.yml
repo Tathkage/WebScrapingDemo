@@ -34,6 +34,18 @@ jobs:
       run: npm run build --if-present
       working-directory: ./frontend/my-angular-app
 
+    - name: Check for test script
+      id: check_test
+      run: |
+        if [ -f ./frontend/my-angular-app/package.json ] && grep -q '"test":' ./frontend/my-angular-app/package.json; then
+          echo "Test script found, proceeding with tests."
+          echo "::set-output name=should_run::true"
+        else
+          echo "No test script found, skipping tests."
+          echo "::set-output name=should_run::false"
+        fi
+        
     - name: Run tests
+      if: steps.check_test.outputs.should_run == 'true'
       run: npm test
       working-directory: ./frontend/my-angular-app

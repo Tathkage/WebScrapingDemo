@@ -23,7 +23,8 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+        working-directory: ./frontend/my-angular-app
 
       - name: Lint CSS
         run: npx stylelint "**/*.css"
-
+        working-directory: ./frontend/my-angular-app

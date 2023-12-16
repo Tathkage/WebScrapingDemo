@@ -1,0 +1,27 @@
+name: CSS Linter
+
+on:
+  push:
+    branches: [ main, test, dev ]
+  pull_request:
+    branches: [ main, test, dev ]
+
+jobs:
+  css-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint CSS
+        run: npx stylelint "path/to/your/css/files/**/*.css" --config .stylelintrc
+

@@ -2,3 +2,5 @@ Django>=3.2,<4.0
 djangorestframework
 mysqlclient
 flake8
+beautifulsoup4
+httpx

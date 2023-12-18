@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from my_django_project.views.mal_scraper import scrape_anime_titles
+from anime_list_scraper.views.mal_scraper import scrape_anime_titles
 
 urlpatterns = [
     path('admin/', admin.site.urls),

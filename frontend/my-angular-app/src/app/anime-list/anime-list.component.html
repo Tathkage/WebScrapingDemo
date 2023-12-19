@@ -1,0 +1,17 @@
+<div class="anime-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let anime of animeList">
+          <td>{{ anime.title }}</td>
+          <td>{{ anime.rating }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
